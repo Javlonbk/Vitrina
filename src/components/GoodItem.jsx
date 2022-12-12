@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ShopContext } from "../context";
 
-const GoodItem = ({id, full_background, price, name, description, addToBasket }) => {
+const GoodItem = ({id, full_background, price, name, description}) => {
+
+  const {addToBasket} = useContext(ShopContext);
   return (
     <div className="GoodItem">
       <img src={full_background} alt={name} />

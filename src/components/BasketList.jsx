@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ShopContext } from "../context";
 import BasketItem from "./BasketItem";
 
-const BasketList = ({ order, handleBasketShow, removeFromBasket, incrementQuantity, decrementQuantity}) => {
+const BasketList = () => {
+
+
+   const { order, handleBasketShow} = useContext(ShopContext)
 
     const totalPrice = order.reduce((sum, value) => {
         return sum + value.price * value.quantity
@@ -16,11 +20,9 @@ const BasketList = ({ order, handleBasketShow, removeFromBasket, incrementQuanti
         {!order.length ? (
           <div className="BasketList_body">Nothing add to cart!</div>
         ) : (
-          order.map((item, index) => {
+          order.map((item) => {
             return (
-             <BasketItem key={item.id} {...item} removeFromBasket={removeFromBasket} 
-             incrementQuantity = {incrementQuantity}
-             decrementQuantity={decrementQuantity} />
+             <BasketItem key={item.id} {...item}  />
             );
           })
         )}

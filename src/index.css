@@ -123,6 +123,7 @@ button:hover{
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  z-index: 10;
  }
  .cart i{
   font-size: 24px;
@@ -201,4 +202,32 @@ button:hover{
  @keyframes show {
   from{top: calc(50vh - 100px); opacity: 0}
   to{top: calc(50vh - 100px); opacity: 1;}
+}
+
+@media only screen and (max-width:576px){
+  .GoodList{
+    padding: 0px !important;
+    padding-top: 20px;
+  }
+  .BasketList{
+    width: 90%;
+    left: 5%;
+  }
+  .BasketList_header, .BasketList_footer{
+    font-size: 18px;
+  }
+  .BasketList_body{
+    flex-direction: column;
+    height: 70px;
+    justify-content: center;
+  }
+  .BasketList_body p{
+    margin-bottom: 8px;
+  }
+  .BasketList_body i{
+       margin-left: 10px;
+  }
+  .BasketList_body button{
+    margin: 0px 5px;
+  }
 }
